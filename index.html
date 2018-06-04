@@ -8,7 +8,16 @@
 	var socket=io();
 	// socket.on('message', (data)=>{document.write(data)});
 	// socket.on('testEvent', (data)=>{document.write(data.description)});
-	socket.emit('testEvent', "sending event ... from client ...");
+
+	// sending custom event from client
+	// socket.emit('testEvent', "sending event ... from client ...");
+
+
+	// sending broadcast event from server	
+	socket.on('broadcast',function(data) {
+         document.body.innerHTML = '';
+         document.write(data.description);
+      });
 </script>
 <body>Hello world</body>
 </html>
