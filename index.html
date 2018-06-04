@@ -6,6 +6,9 @@
 <script src = "/socket.io/socket.io.js"></script>
 <script type="text/javascript">
 	var socket=io();
+	// socket.on('message', (data)=>{document.write(data)});
+	// socket.on('testEvent', (data)=>{document.write(data.description)});
+	socket.emit('testEvent', "sending event ... from client ...");
 </script>
 <body>Hello world</body>
 </html>
